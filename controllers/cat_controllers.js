@@ -14,7 +14,7 @@ module.exports = function(app) {
   });
 
   // GET route for retrieving single cat
-  app.get("/api/cats/:name", function(req, res) {
+  app.get("/api/cats/:cat_name", function(req, res) {
     db.Cat.findOne({
       where: {
         cat_name: req.params.cat_name
