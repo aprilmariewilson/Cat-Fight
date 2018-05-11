@@ -9,4 +9,4 @@ CREATE TABLE IF NOT EXISTS Cats (
     def int(4) NOT NULL,
 		model varchar(255) NOT NULL,
     primary key(id)
-)
+);
