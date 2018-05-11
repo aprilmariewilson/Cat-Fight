@@ -31,7 +31,8 @@ module.exports = function(app) {
       cat_name: req.body.cat_name,
       hp: req.body.hp,
       atk: req.body.atk,
-      def: req.body.def
+			def: req.body.def,
+			model: req.body.model
     }).then(function(dbCat) {
       res.json(dbCat);
     });
