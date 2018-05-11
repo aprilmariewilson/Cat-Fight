@@ -17,7 +17,7 @@ module.exports = function(app) {
   app.get("/api/cats/:name", function(req, res) {
     db.Cat.findOne({
       where: {
-        name: req.params.name
+        cat_name: req.params.cat_name
       }
     }).then(function(dbCat) {
       res.json(dbCat);
@@ -28,7 +28,7 @@ module.exports = function(app) {
   app.post("/api/cats", function(req, res) {
     console.log(req.body);
     db.Cat.create({
-      name: req.body.name,
+      cat_name: req.body.cat_name,
       hp: req.body.hp,
       atk: req.body.atk,
       def: req.body.def
@@ -41,7 +41,7 @@ module.exports = function(app) {
   app.delete("/api/cats/:name", function(req, res) {
     db.Cat.destroy({
       where: {
-        name: req.params.name
+        cat_name: req.params.cat_name
       }
     }).then(function(dbCat) {
       res.json(dbCat);
@@ -52,7 +52,7 @@ module.exports = function(app) {
   app.put("api/cats", function(req, res) {
     db.Cat.update(req.body, {
       where: {
-        name: req.body.name
+        cat_name: req.body.cat_name
       }
     }).then(function(dbCat) {
       res.json(dbCat);
