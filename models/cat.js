@@ -3,23 +3,30 @@ module.exports = function (sequelize, DataTypes) {
 
     var Cat = sequelize.define("Cat",
         {
-            name: {
-                type: DataTypes.STRING
+            cat_name: {
+								type: DataTypes.STRING,
+								allowNull: false,
+								defaultValue: 'Cat'
             },
 
             hp: {
-                type: DataTypes.INTEGER
+								type: DataTypes.INTEGER,
+								allowNull: false,
+								defaultValue: 100
             },
 
             atk: {
-                type: DataTypes.INTEGER
+								type: DataTypes.INTEGER,
+								allowNull: false,
+								defaultValue: 10
             },
 
             def: {
-                type: DataTypes.INTEGER
+								type: DataTypes.INTEGER,
+								allowNull: false,
+								defaultValue: 10
             }
-
-
+	
         }, {
             timestamps: false
         }
