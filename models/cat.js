@@ -25,7 +25,13 @@ module.exports = function (sequelize, DataTypes) {
 								type: DataTypes.INTEGER,
 								allowNull: false,
 								defaultValue: 10
-            }
+						},
+						
+						model: {
+							type: DataTypes.INTEGER,
+							allowNull: false,
+							defaultValue: './'
+						}
 	
         }, {
             timestamps: false
