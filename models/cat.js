@@ -3,6 +3,7 @@ module.exports = function (sequelize, DataTypes) {
 
     var Cat = sequelize.define("Cat",
         {
+					
             cat_name: {
 								type: DataTypes.STRING,
 								allowNull: false,
