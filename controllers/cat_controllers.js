@@ -45,7 +45,7 @@ module.exports = function(app) {
   });
   // PUT route for updating cats
   app.put("/api/cats", function(req, res) {
-        console.log(req.body);
+      console.log(req.body);
     db.Cat.update(req.body, {
       where: {
         cat_name: req.body.cat_name
