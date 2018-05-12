@@ -39,7 +39,7 @@ module.exports = function(app) {
   });
 
   // DELETE route for deleting cats
-  app.delete("/api/cats/:name", function(req, res) {
+  app.delete("/api/cats/:cat_name", function(req, res) {
     db.Cat.destroy({
       where: {
         cat_name: req.params.cat_name
@@ -51,6 +51,8 @@ module.exports = function(app) {
 
   // PUT route for updating cats
   app.put("/api/cats", function(req, res) {
+
+		console.log(req.body);
     db.Cat.update(req.body, {
       where: {
         cat_name: req.body.cat_name
