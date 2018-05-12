@@ -1,30 +1,61 @@
-var player, com, turn, winner;
+var player = {
+	name: '',
+	atk: 10,
+	hp: 100,
+	def: 5,
+	model: 1
+}
+var com, turn, winner;
+var choose = 0;
 var background = $('#background');
 var player_left = $('#player-left');
 var player_right = $('#player-right');
 
-console.log(document);
 $(document).ready(function () {
-	showBattleField();
+	createBattleField();
 	selectPlayer();
+	//set player to id of sql things
 });
 
-function setPlayers(player1, player2) {
-	this.player = player1;
-	this.com = player2;
+//right modal button click
+$(document).on("click", "#right-select", function () {
+
+});
+
+//left modal button click
+$(document).on("click", "#left-select", function () {
+
+});
+
+//Choose player button - must have name or an alert pops up.
+$(document).on("click", "#select-player", function () {
+	if ($('#modal-name').val() === '') {
+		alert('You must enter a name!');
+	} else {
+		$('#exampleModal').modal("hide");
+		$('#status-text').text('fight!');
+	}
+
+});
+
+function setPlayer(name, model) {
+
 }
 
 function selectPlayer() {
 	//hide player/com divs
 	$(background).empty();
 
-	var playerSelect = $('<div>');
-	$(playerSelect).css('id', 'player-select');
-	//show player selector/name
-	//scroll through with buttons
+	$('#modal-image').css('background-color', 'green');
+	$('#modal-image').css('width', '200px');
+	$('#modal-image').css('height', '20vh');
+
+	$('#exampleModal').modal({
+		backdrop: 'static',
+	});
 }
 
-function showBattleField() {
+function createBattleField() {
 	$('#battle').empty();
 
 	var statusDiv = $('<div>');
@@ -32,7 +63,8 @@ function showBattleField() {
 	var moves = $('<p>');
 
 	$(statusDiv).append(statusText);
-	$(statusText).text('test');
+
+	$(statusText).attr('id', 'status-text');
 
 	$(background).css('background-color', 'red');
 
