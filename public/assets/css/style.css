@@ -1,0 +1,15 @@
+#battle{
+		margin: auto;
+		margin-top: 10vh;
+};
+
+.modal-element {
+	display: flex;
+
+}
+
+.modal-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
