@@ -20,6 +20,16 @@ module.exports = function(app) {
       res.json(dbCat);
     });
   });
+
+  app.get("/api/cats/id/:id", function(req, res) {
+    db.Cat.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbCat){
+      res.json(dbCat);
+    });
+  });
   // POST route for saving new cat
   app.post("/api/cats", function(req, res) {
     console.log(req.body);
