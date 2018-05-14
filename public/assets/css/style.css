@@ -13,3 +13,16 @@
 	flex-direction: row;
 	justify-content: space-evenly;
 }
+
+
+.actions-col {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.action-btn {
+	display: flex;
+	align-self: flex-end;
+	flex-direction: row;
+}

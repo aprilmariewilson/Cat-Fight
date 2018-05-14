@@ -5,26 +5,46 @@ var player = {
 	def: 5,
 	model: 1
 }
+
+var computer = {
+	name: '',
+	atk: 10,
+	hp: 100,
+	def: 4,
+	mode: 1
+}
+
 var com, turn, winner;
+var defeatedOpponents = [];
+var models = [1, 2, 3, 4, 5, 6];
+var select = 3;
 var choose = 0;
 var background = $('#background');
 var player_left = $('#player-left');
 var player_right = $('#player-right');
+var battleFrame = $('#battle');
 
 $(document).ready(function () {
 	createBattleField();
-	selectPlayer();
-	//set player to id of sql things
+	// setEnemy();
+	// setPlayer('name', 2);
+	// selectPlayer();
 });
 
 //right modal button click
 $(document).on("click", "#right-select", function () {
-
+	if (select < models.length) {
+		++select;
+		//model display changes by one to right
+	}
 });
 
 //left modal button click
 $(document).on("click", "#left-select", function () {
-
+	if (select > 1) {
+		--select;
+		//model display changes by one to left
+	}
 });
 
 //Choose player button - must have name or an alert pops up.
@@ -32,29 +52,89 @@ $(document).on("click", "#select-player", function () {
 	if ($('#modal-name').val() === '') {
 		alert('You must enter a name!');
 	} else {
+		setPlayer($('#modal-name').val(), 1);
 		$('#exampleModal').modal("hide");
 		$('#status-text').text('fight!');
 	}
-
 });
 
-function setPlayer(name, model) {
+// "Fight" dropdown menu list items
+$(document).on("click", ".fight-li", function () {
+	fightMove($(this).attr('value'));
+	if (turn) {
 
+		turn = false;
+	}
+});
+
+// "Item" dropdown menu list items
+$(document).on("click", ".item-li", function () {
+	if (turn) {
+		useItem($(this).attr('value'));
+		turn = false;
+	}
+});
+
+function setPlayer(playerName) {
+	//Set player name and the rest of player object by id of player
+	this.player.name = playerName;
+	$.get("/api/cats/id/" + select, function (data, status) {
+		player.hp = data.hp;
+		player.atk = data.atk;
+		player.def = data.def;
+		player.model = data.model;
+
+		//Push to deleted models --- shortcut so that the model cannot be used by the computer
+		defeatedOpponents.push(select);
+		$('.action-btn').show();
+	});
+	turn = true;
+
+}
+
+function setEnemy() {
+	var random;
+
+	if (models.length === defeatedOpponents.length) {
+		//trigger win
+	}
+
+	//loops through as long as length of models < length of defeatedOpponents (all models have been used)
+	//Generates a random number and verifies it has not been used && is less than models length
+	while (models.length > defeatedOpponents.length) {
+		random = Math.floor(Math.random() * models.length + 1) + 1;
+		if (!defeatedOpponents.includes(random) && random <= models.length) break;
+	}
+
+
+
+	//Gets a cat by id and saves it as the computer object
+	$.get('/api/cats/id/' + random, function (data, status) {
+		computer.name = data.cat_name;
+		computer.hp = data.hp;
+		computer.atk = data.atk;
+		computer.def = data.def;
+		computer.model = data.model;
+		defeatedOpponents.push(random);
+	});
 }
 
 function selectPlayer() {
 	//hide player/com divs
 	$(background).empty();
-
+	$('.action-btn').hide();
+	//Example CSS for placement of image in modal
 	$('#modal-image').css('background-color', 'green');
 	$('#modal-image').css('width', '200px');
 	$('#modal-image').css('height', '20vh');
 
+	//Makes the modal unable to close if you click outside of the box
 	$('#exampleModal').modal({
 		backdrop: 'static',
 	});
 }
 
+//Set up the battle scene - most of this can go into style.css later on
 function createBattleField() {
 	$('#battle').empty();
 
@@ -62,73 +142,173 @@ function createBattleField() {
 	var statusText = $('<h2>');
 	var moves = $('<p>');
 
+	$(moves).text('key1: move1 key2: move2 key3: move3');
 	$(statusDiv).append(statusText);
+	$(statusDiv).css('background-color', 'yellow');
 
 	$(statusText).attr('id', 'status-text');
 
-	$(background).css('background-color', 'red');
-
+	$(player_right).css('align-self', 'flex-end');
 	$(player_right).css('background-color', 'yellow');
 	$(player_right).css('height', '15vh');
 	$(player_right).css('width', '10em');
 
+	$(player_left).css('align-self', 'flex-end');
 	$(player_left).css('background-color', 'limegreen');
 	$(player_left).css('height', '15vh');
 	$(player_left).css('width', '10em');
-
-	$(moves).text('key1: move1 key2: move2 key3: move3');
 
 	$(background).css('display', 'flex');
 	$(background).css('justify-content', 'space-between');
 	$(background).css('height', '40vh');
 
-	$(player_left).css('align-self', 'flex-end');
-	$(player_right).css('align-self', 'flex-end');
+	$(battleFrame).css('align-content', 'center');
+	$(battleFrame).css('height', 'auto');
 
-	$('#battle').css('align-content', 'center');
-	$('#battle').css('height', 'auto');
 	$(statusText).css('align-text', 'center');
 	$(statusText).text('Status Text');
+	
+	$(background).css('background-image', 'url(/assets/backgrounds/background-1.png');
+	$(background).css('background-size', 'contain');
 
 	$(background).append(player_left);
 	$(background).append(player_right);
 
-	$(statusDiv).css('background-color', 'yellow');
 	$(statusDiv).append(statusText);
 
-	$('#battle').append(statusDiv);
-	$('#battle').append(background);
-
-	$('#battle').append(moves);
+	$(battleFrame).append(statusDiv);
+	$(battleFrame).append(background);
+	$(battleFrame).append(moves);
 }
 
-function movess(amove) {
-	switch (amove) {
-		case 'punch':
-			executeMove(movefunction);
-			break;
-		case 'roundhouse':
-			executeMove(movefunction);
+//Selects a move and executes it perfectly
+function fightMove(amove) {
+	switch (parseInt(amove)) {
+		case 1:
+			//Attack
+			animatePlayer(function () {
+
+			});
 			break;
 
-		case 'flipkick':
-			executeMove(movefunction);
+		case 2:
+			//Roundhouse
+			animateOpponent(function () {
+
+			});
 			break;
 
-		case 'dead':
-			executeMove(movefunction);
+		case 3:
+			//Another move
+			animatePlayer(function () {
+
+			});
 			break;
 
-		case 'hit':
-			executeMove(movefunction);
+		default:
 			break;
+
 	}
 }
 
-function executeMove(amove) {
-	if (turn === true) {
-		//execute move from moves.js on player
-	} else {
-		//execute move from enemy
+function opponentMove(amove) {
+	switch (parseInt(amove)) {
+		case 1:
+			//Attack
+			animateOpponent(function () {
+
+			});
+			break;
+
+		case 2:
+			//Roundhouse
+			animateOpponent(function () {
+
+			});
+			break;
+
+		case 3:
+			//Another move
+			animateOpponent(function () {
+
+			});
+			break;
+
+		default:
+			break;
+
+	}
+}
+
+function animatePlayer(attack) {
+	//We use a callback function to determine what happens; this function is defined in the switch statement in fightMove()
+
+	//Start walk right animation
+	$(player_left).animate({ left: '21em' }, 1000, function () {
+		//End walk right animation
+		//This is where we will animate the executed move
+		attack();
+		$(player_right).animate({ left: '5em' }, 200, function () {
+			//This is where we animate the opponent getting hit (knocked back is functioning)
+			$(player_left).animate({ left: '0em' }, 1000, function () {
+				//This is where we animate the player walking left
+				$(player_right).animate({
+					left: '0em'
+				}, 200, function () {
+					//And this is where both player and opponent are back at starting positions
+				});
+			}
+			)
+		}
+		)
+
+	});
+}
+
+function animateOpponent(attack) {
+	//This is the opposite of animatePlayer
+
+	//Start walk left animation (opponent)
+	$(player_right).animate({ left: '-21em' }, 1000, function () {
+		//End walk left animation
+		//This is where we will animate the executed move (opponent)
+		attack();
+		$(player_left).animate({ left: '-5em' }, 200, function () {
+			//This is where we animate the opponent getting hit (knocked back is functioning)
+			$(player_right).animate({ left: '0em' }, 1000, function () {
+				//This is where we animate the player walking right
+				$(player_left).animate({
+					left: '0em'
+				}, 200, function () {
+					//And this is where both player and opponent are back at starting positions
+				});
+			}
+			)
+		}
+		)
+
+	});
+
+
+}
+
+//Selects item to use
+function useItem(anitem) {
+	switch (parseInt(amove)) {
+		case 1:
+			//Use potion
+			break;
+
+		case 2:
+			//Another Item
+			break;
+
+		case 3:
+			//Other Item
+			break;
+
+		default:
+			break;
+
 	}
 }

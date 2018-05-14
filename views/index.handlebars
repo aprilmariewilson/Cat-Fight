@@ -1,12 +1,50 @@
 {{> _nav}}
+<div class="panel panel-default">
 
-<div class="container" id="battle">
-	<div class="row" id="background">
-		<div class="col-md-6" id="player-left">
-		</div>
-		<div class="col-md-6" id="player-right">
-		</div>
-	</div>
+  <div class="row container" id="battle">
+    <div class="row" id="background">
+      <div class="col-md-6" id="player-left">
+      </div>
+      <div class="col-md-6" id="player-right">
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 actions-col">
+      <div class="dropdown">
+        <button id="fight-label" class="btn btn-info action-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Fight
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="fight-label">
+          <li><a class="fight-li" href="#" value="1">Attack</a></li>
+          <li><a class="fight-li" href="#" value="2">Roundhouse</a></li>
+          <li><a class="fight-li" href="#" value="3">Some other move</a></li>
+        </ul>
+
+      </div>
+
+      <div class="dropdown">
+        <button id="fight-label" class="btn btn-default action-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Item
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="fight-label">
+          <li><a class="item-li" href="#" value="1">Potion</a></li>
+          <li><a class="item-li" href="#" value="2">Another Item</a></li>
+          <li><a class="item-li" href="#" value="3">Etc.</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+
+  </div>
+
 </div>
 
 
@@ -20,12 +58,12 @@
         </button>
       </div>
       <div class="modal-body">
-				<button class="modal-arrow modal-element" id="left-select">Left</button>
+        <button class="modal-arrow modal-element" id="left-select">Left</button>
         <div class="modal-element" id="modal-image"></div>
-				<button class="modal-arrow modal-element" id="right-select">Right</button>
+        <button class="modal-arrow modal-element" id="right-select">Right</button>
       </div>
       <div class="modal-footer">
-				<input type="text" id="modal-name">
+        <input type="text" id="modal-name">
         <button type="button" class="btn btn-primary" id="select-player">Choose</button>
       </div>
     </div>
