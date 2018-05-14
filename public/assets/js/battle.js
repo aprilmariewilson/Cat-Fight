@@ -24,8 +24,12 @@ var player_left = $('#player-left');
 var player_right = $('#player-right');
 var battleFrame = $('#battle');
 
+$.getScript('/assets/spritesheets/cat-sprite.js');
+
+
 $(document).ready(function () {
 	createBattleField();
+
 	// setEnemy();
 	// setPlayer('name', 2);
 	// selectPlayer();
@@ -144,6 +148,16 @@ function createBattleField() {
 
 	$(moves).text('key1: move1 key2: move2 key3: move3');
 	$(statusDiv).append(statusText);
+	/* 
+		To do: Transfer all of the jquery css statements into a css file to reduce code length
+
+		background = $('#background');
+		player_left = $('#player-left');
+		player_right = $('#player-right');
+		battleFrame = $('#battle');
+
+		Plus the divs created above this statement.
+	*/
 	$(statusDiv).css('background-color', 'yellow');
 
 	$(statusText).attr('id', 'status-text');
@@ -154,7 +168,7 @@ function createBattleField() {
 	$(player_right).css('width', '10em');
 
 	$(player_left).css('align-self', 'flex-end');
-	$(player_left).css('background-color', 'limegreen');
+
 	$(player_left).css('height', '15vh');
 	$(player_left).css('width', '10em');
 
@@ -167,7 +181,7 @@ function createBattleField() {
 
 	$(statusText).css('align-text', 'center');
 	$(statusText).text('Status Text');
-	
+
 	$(background).css('background-image', 'url(/assets/backgrounds/background-1.png');
 	$(background).css('background-size', 'contain');
 
@@ -193,13 +207,14 @@ function fightMove(amove) {
 
 		case 2:
 			//Roundhouse
+			//Default to animate opponent to show off dropdown menu option 2
 			animateOpponent(function () {
 
 			});
 			break;
 
 		case 3:
-			//Another move
+			//Another move/3rd list item
 			animatePlayer(function () {
 
 			});
@@ -243,19 +258,32 @@ function opponentMove(amove) {
 function animatePlayer(attack) {
 	//We use a callback function to determine what happens; this function is defined in the switch statement in fightMove()
 
+
 	//Start walk right animation
-	$(player_left).animate({ left: '21em' }, 1000, function () {
+	animateCat('walk');
+
+	$(player_left).animate({ left: '23em' }, 1000, function () {
 		//End walk right animation
+		animateCat('idle');
 		//This is where we will animate the executed move
 		attack();
-		$(player_right).animate({ left: '5em' }, 200, function () {
-			//This is where we animate the opponent getting hit (knocked back is functioning)
-			$(player_left).animate({ left: '0em' }, 1000, function () {
-				//This is where we animate the player walking left
+
+		//Along with the attack animation
+		animateCat('kick');
+
+		$(player_right).stop().delay(750).animate({ left: '2em' }, 200, function () {
+			//This is where we animate the opponent getting hit
+
+			//This is also where we animate the cat walking back
+			animateCat('walk');
+
+			$(player_left).stop().animate({ left: '0em' }, 1000, function () {
+				
 				$(player_right).animate({
 					left: '0em'
 				}, 200, function () {
 					//And this is where both player and opponent are back at starting positions
+					animateCat('idle');
 				});
 			}
 			)
@@ -267,14 +295,14 @@ function animatePlayer(attack) {
 
 function animateOpponent(attack) {
 	//This is the opposite of animatePlayer
-
-	//Start walk left animation (opponent)
+	//Start opponent walking left animation here
 	$(player_right).animate({ left: '-21em' }, 1000, function () {
 		//End walk left animation
 		//This is where we will animate the executed move (opponent)
 		attack();
-		$(player_left).animate({ left: '-5em' }, 200, function () {
+		$(player_left).animate({ left: '-2em' }, 200, function () {
 			//This is where we animate the opponent getting hit (knocked back is functioning)
+			animateCat('gethit');
 			$(player_right).animate({ left: '0em' }, 1000, function () {
 				//This is where we animate the player walking right
 				$(player_left).animate({
