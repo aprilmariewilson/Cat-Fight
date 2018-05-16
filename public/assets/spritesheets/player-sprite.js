@@ -47,7 +47,7 @@ var right = false;
 var speed = 12;
 
 //Getting the canvas 
-var canvas = document.getElementById('player-left');
+var canvas = document.getElementById('player-preview');
 
 //setting width and height of the canvas 
 canvas.width = canvasWidth;
@@ -83,7 +83,7 @@ function draw() {
     ctx.drawImage(character, srcX, srcY, width, height, x, y, width, height);
 }
 
-setInterval(draw, 100);
+var playerInterval = setInterval(draw, 100);
 
 function animateCat(animation, endAnimation) {
     var idle = {
@@ -122,12 +122,24 @@ function animateCat(animation, endAnimation) {
             srcY = 64;
             frameCount = 8;
             break;
+
+        case 'dead':
+            curFrame = 0;
+            srcY = 256;
+            frameCount = 9;
+            setTimeout(() => {
+                clearInterval(playerInterval);
+            }, 600);
+            break;
+
+        default:
+            break;
     }
 }
 
 function flipHorizontal() {
 
-    if(!flipped) {
+    if (!flipped) {
         ctx.translate(width, 0);
         ctx.scale(-1, 1);
     } else {

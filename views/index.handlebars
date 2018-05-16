@@ -11,77 +11,18 @@
 
 <div class="row">
   <div class="col-md-6 player-health">
-    <div id="player-left-health">playe left health</div>
+    <div id="player-left-health"></div>
   </div>
   <div class="col-md-6 player-health">
-    <div id="player-right-health">comp right health</div>
+    <div id="player-right-health"></div>
   </div>
 </div>
 
 </div>
 
-<div class="row">
-  <div class="col-md-6 actions-col">
-    <div class="dropdown">
-      <button id="fight-label" class="btn btn-info action-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Fight
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="fight-label">
-        <li>
-          <a class="fight-li" href="#" value="1">Attack</a>
-        </li>
-        <li>
-          <a class="fight-li" href="#" value="2">Roundhouse</a>
-        </li>
-        <li>
-          <a class="fight-li" href="#" value="3">Some other move</a>
-        </li>
-      </ul>
-
-    </div>
-
-    <div class="dropdown">
-      <button id="fight-label" class="btn btn-default action-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Item
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="fight-label">
-        <li>
-          <a class="item-li" href="#" value="1">Potion</a>
-        </li>
-      </ul>
-
-    </div>
-  </div>
-
+{{>_dropdowns}}
 
 </div>
 
-</div>
 
-{{!-- This section is for the select character modal --}}
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="modalLabel">Choose your player!</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <button class="modal-arrow modal-element" id="left-select">Left</button>
-        <div class="modal-element" id="modal-image"></div>
-        <button class="modal-arrow modal-element" id="right-select">Right</button>
-      </div>
-      <div class="modal-footer">
-        <input type="text" id="modal-name">
-        <button type="button" class="btn btn-primary" id="select-player">Choose</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-{{>_footer}}
+{{>_modal}} {{>_footer}}
