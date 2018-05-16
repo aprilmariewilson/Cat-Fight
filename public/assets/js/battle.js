@@ -162,28 +162,28 @@ function createBattleField() {
 
 	$(statusText).attr('id', 'status-text');
 
-	$(player_right).css('align-self', 'flex-end');
-	$(player_right).css('background-color', 'yellow');
-	$(player_right).css('height', '15vh');
-	$(player_right).css('width', '10em');
+	// $(player_right).css('align-self', 'flex-end');
+	// $(player_right).css('background-color', 'yellow');
+	// $(player_right).css('height', '15vh');
+	// $(player_right).css('width', '10em');
 
-	$(player_left).css('align-self', 'flex-end');
+	// $(player_left).css('align-self', 'flex-end');
 
-	$(player_left).css('height', '15vh');
-	$(player_left).css('width', '10em');
+	// $(player_left).css('height', '15vh');
+	// $(player_left).css('width', '10em');
 
-	$(background).css('display', 'flex');
-	$(background).css('justify-content', 'space-between');
-	$(background).css('height', '40vh');
+	// $(background).css('display', 'flex');
+	// $(background).css('justify-content', 'space-between');
+	// $(background).css('height', '40vh');
 
-	$(battleFrame).css('align-content', 'center');
-	$(battleFrame).css('height', 'auto');
+	// $(battleFrame).css('align-content', 'center');
+	// $(battleFrame).css('height', 'auto');
 
 	$(statusText).css('align-text', 'center');
 	$(statusText).text('Status Text');
 
 	// $(background).css('background-image', 'url(/assets/backgrounds/background-1.png');
-	$(background).css('background-size', 'contain');
+	// $(background).css('background-size', 'contain');
 
 	$(background).append(player_left);
 	$(background).append(player_right);
