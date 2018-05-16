@@ -70,25 +70,33 @@ function showBattleField() {
 	$('#battle').append(moves);
 }
 
-function movess(amove) {
+function moves(amove) {
 	switch (amove) {
 		case 'punch':
-			executeMove(movefunction);
+			executeMove(punch);
 			break;
-		case 'roundhouse':
-			executeMove(movefunction);
+		case 'roundHouse':
+			executeMove(roundHouse);
 			break;
 
-		case 'flipkick':
-			executeMove(movefunction);
+		case 'flipKick':
+			executeMove(flipKick);
 			break;
 
 		case 'dead':
-			executeMove(movefunction);
+			executeMove(moveFunction);
 			break;
 
 		case 'hit':
-			executeMove(movefunction);
+			executeMove(moveFunction);
+			break;
+		
+		case 'duck':
+			executeMove(duck);
+			break;
+
+		case 'block':
+			executeMove(block);
 			break;
 	}
 }
