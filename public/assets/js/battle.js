@@ -1,6 +1,7 @@
 var player = {
 	name: '',
 	atk: 10,
+	maxhp: 100,
 	hp: 100,
 	def: 5,
 	model: 1
@@ -9,6 +10,7 @@ var player = {
 var computer = {
 	name: '',
 	atk: 10,
+	maxhp: 100,
 	hp: 100,
 	def: 4,
 	mode: 1
@@ -24,13 +26,15 @@ var player_left = $('#player-left');
 var player_right = $('#player-right');
 var battleFrame = $('#battle');
 
-$.getScript('/assets/spritesheets/cat-sprite.js');
-
+$.getScript('/assets/spritesheets/player-sprite.js');
+$.getScript('/assets/spritesheets/computer-sprite.js');
 
 $(document).ready(function () {
+	// selectPlayer();
+	setEnemy();
 	createBattleField();
-
-	// setEnemy();
+	// selectPlayer();
+	
 	// setPlayer('name', 2);
 	// selectPlayer();
 });
@@ -79,10 +83,15 @@ $(document).on("click", ".item-li", function () {
 	}
 });
 
+function updateHealth() {
+
+}
+
 function setPlayer(playerName) {
 	//Set player name and the rest of player object by id of player
 	this.player.name = playerName;
 	$.get("/api/cats/id/" + select, function (data, status) {
+		player.maxhp = data.hp;
 		player.hp = data.hp;
 		player.atk = data.atk;
 		player.def = data.def;
@@ -91,8 +100,10 @@ function setPlayer(playerName) {
 		//Push to deleted models --- shortcut so that the model cannot be used by the computer
 		defeatedOpponents.push(select);
 		$('.action-btn').show();
+		turn = true;
+		$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.hp + '</h3>');
 	});
-	turn = true;
+
 
 }
 
@@ -115,12 +126,17 @@ function setEnemy() {
 	//Gets a cat by id and saves it as the computer object
 	$.get('/api/cats/id/' + random, function (data, status) {
 		computer.name = data.cat_name;
+		computer.maxhp = data.hp;
 		computer.hp = data.hp;
 		computer.atk = data.atk;
 		computer.def = data.def;
 		computer.model = data.model;
 		defeatedOpponents.push(random);
+		console.log(computer.name);
+		$('#player-right-health').html('<h3>' + computer.name + ':  ' + computer.hp + ' / ' + computer.hp + '</h3>');
 	});
+
+
 }
 
 function selectPlayer() {
@@ -144,9 +160,9 @@ function createBattleField() {
 
 	var statusDiv = $('<div>');
 	var statusText = $('<h2>');
-	var moves = $('<p>');
+	var health = $('<div>');
 
-	$(moves).text('key1: move1 key2: move2 key3: move3');
+
 	$(statusDiv).append(statusText);
 	/* 
 		To do: Transfer all of the jquery css statements into a css file to reduce code length
@@ -162,28 +178,27 @@ function createBattleField() {
 
 	$(statusText).attr('id', 'status-text');
 
-	// $(player_right).css('align-self', 'flex-end');
-	// $(player_right).css('background-color', 'yellow');
-	// $(player_right).css('height', '15vh');
-	// $(player_right).css('width', '10em');
+	$(player_right).css('align-self', 'flex-end');
+	$(player_right).css('height', '15vh');
+	$(player_right).css('width', '10em');
 
-	// $(player_left).css('align-self', 'flex-end');
+	$(player_left).css('align-self', 'flex-end');
 
-	// $(player_left).css('height', '15vh');
-	// $(player_left).css('width', '10em');
+	$(player_left).css('height', '15vh');
+	$(player_left).css('width', '10em');
 
-	// $(background).css('display', 'flex');
-	// $(background).css('justify-content', 'space-between');
-	// $(background).css('height', '40vh');
+	$(background).css('display', 'flex');
+	$(background).css('justify-content', 'space-between');
+	$(background).css('height', '40vh');
 
-	// $(battleFrame).css('align-content', 'center');
-	// $(battleFrame).css('height', 'auto');
+	$(battleFrame).css('align-content', 'center');
+	$(battleFrame).css('height', 'auto');
 
 	$(statusText).css('align-text', 'center');
 	$(statusText).text('Status Text');
 
-	// $(background).css('background-image', 'url(/assets/backgrounds/background-1.png');
-	// $(background).css('background-size', 'contain');
+	$(background).css('background-image', 'url(/assets/backgrounds/background-1.png');
+	$(background).css('background-size', 'contain');
 
 	$(background).append(player_left);
 	$(background).append(player_right);
@@ -192,7 +207,6 @@ function createBattleField() {
 
 	$(battleFrame).append(statusDiv);
 	$(battleFrame).append(background);
-	$(battleFrame).append(moves);
 }
 
 //Selects a move and executes it perfectly
@@ -273,16 +287,18 @@ function animatePlayer(attack) {
 
 		$(player_right).stop().delay(750).animate({ left: '2em' }, 200, function () {
 			//This is where we animate the opponent getting hit
-
+			companimateCat('gethit');
 			//This is also where we animate the cat walking back
+			flipHorizontal();
 			animateCat('walk');
 
 			$(player_left).stop().animate({ left: '0em' }, 1000, function () {
-				
+
 				$(player_right).animate({
 					left: '0em'
 				}, 200, function () {
 					//And this is where both player and opponent are back at starting positions
+					flipHorizontal();
 					animateCat('idle');
 				});
 			}
@@ -296,19 +312,28 @@ function animatePlayer(attack) {
 function animateOpponent(attack) {
 	//This is the opposite of animatePlayer
 	//Start opponent walking left animation here
-	$(player_right).animate({ left: '-21em' }, 1000, function () {
+	companimateCat('walk');
+
+	$(player_right).animate({ left: '-23em' }, 1000, function () {
 		//End walk left animation
+		companimateCat('idle');
 		//This is where we will animate the executed move (opponent)
 		attack();
-		$(player_left).animate({ left: '-2em' }, 200, function () {
+
+		companimateCat('kick');
+		$(player_left).stop().delay(750).animate({ left: '-2em' }, 200, function () {
 			//This is where we animate the opponent getting hit (knocked back is functioning)
 			animateCat('gethit');
-			$(player_right).animate({ left: '0em' }, 1000, function () {
+			compflipHorizontal();
+			companimateCat('walk');
+			$(player_right).stop().animate({ left: '0em' }, 1000, function () {
 				//This is where we animate the player walking right
 				$(player_left).animate({
 					left: '0em'
 				}, 200, function () {
 					//And this is where both player and opponent are back at starting positions
+					compflipHorizontal();
+					companimateCat('idle');
 				});
 			}
 			)
