@@ -1,10 +1,14 @@
 //Width and height for our canvas
-var canvasWidth = 64;
-var canvasHeight = 64;
+// var canvasWidth = 64;
+// var canvasHeight = 64;
+var canvasWidth = 128;
+var canvasHeight = 128;
 
 //the with and height of our spritesheet
-var spriteWidth = 1024;
-var spriteHeight = 1024;
+// var spriteWidth = 1024;
+// var spriteHeight = 1024;
+var spriteWidth = 2048;
+var spriteHeight = 2048;
 
 //we are having two rows and 8 cols in the current sprite sheet
 var rows = 1;
@@ -30,8 +34,10 @@ var curFrame = 0;
 var frameCount = 4;
 
 //x and y coordinates to render the sprite 
+// var x = 0;
+// var y = 0;
 var x = 0;
-var y = 0;
+var y = -70;
 
 //x and y coordinates of the canvas to get the single frame 
 var srcX = 0;
@@ -60,7 +66,9 @@ var ctx = canvas.getContext("2d");
 var character = new Image();
 
 //Setting the source to the image file 
-character.src = "/assets/spritesheets/spritesheet.png";
+
+character.src = "/assets/spritesheets/antlerRightBlock.png";
+// character.src = "/assets/spritesheets/spritesheet.png";
 
 
 function updateFrame() {

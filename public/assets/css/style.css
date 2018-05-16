@@ -26,3 +26,11 @@
 	align-self: flex-end;
 	flex-direction: row;
 }
+
+/* .antlerCorkScrew { 
+    animation: antlerCorkScrew steps(65) 2s infinite; 
+}
+@keyframes punch {
+    from { background-position:0px -160px; }
+    to { background-position:-280px -160px; }
+} */

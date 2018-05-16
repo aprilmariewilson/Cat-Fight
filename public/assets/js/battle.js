@@ -182,7 +182,7 @@ function createBattleField() {
 	$(statusText).css('align-text', 'center');
 	$(statusText).text('Status Text');
 
-	$(background).css('background-image', 'url(/assets/backgrounds/background-1.png');
+	// $(background).css('background-image', 'url(/assets/backgrounds/background-1.png');
 	$(background).css('background-size', 'contain');
 
 	$(background).append(player_left);

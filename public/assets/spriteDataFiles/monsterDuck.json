@@ -1,0 +1,462 @@
+{"frames": [
+
+{
+	"filename": "Ducking.fbx0001.png",
+	"frame": {"x":1,"y":1,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0002.png",
+	"frame": {"x":131,"y":1,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0003.png",
+	"frame": {"x":261,"y":1,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0004.png",
+	"frame": {"x":391,"y":1,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0005.png",
+	"frame": {"x":521,"y":1,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0006.png",
+	"frame": {"x":651,"y":1,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0007.png",
+	"frame": {"x":781,"y":1,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0008.png",
+	"frame": {"x":1,"y":259,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0009.png",
+	"frame": {"x":131,"y":259,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0010.png",
+	"frame": {"x":261,"y":259,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0011.png",
+	"frame": {"x":391,"y":259,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0012.png",
+	"frame": {"x":521,"y":259,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0013.png",
+	"frame": {"x":651,"y":259,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0014.png",
+	"frame": {"x":781,"y":259,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0015.png",
+	"frame": {"x":1,"y":517,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0016.png",
+	"frame": {"x":131,"y":517,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0017.png",
+	"frame": {"x":261,"y":517,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0018.png",
+	"frame": {"x":391,"y":517,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0019.png",
+	"frame": {"x":521,"y":517,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0020.png",
+	"frame": {"x":651,"y":517,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0021.png",
+	"frame": {"x":781,"y":517,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0022.png",
+	"frame": {"x":1,"y":775,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0023.png",
+	"frame": {"x":131,"y":775,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0024.png",
+	"frame": {"x":261,"y":775,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0025.png",
+	"frame": {"x":391,"y":775,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0026.png",
+	"frame": {"x":521,"y":775,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0027.png",
+	"frame": {"x":651,"y":775,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0028.png",
+	"frame": {"x":781,"y":775,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0029.png",
+	"frame": {"x":1,"y":1033,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0030.png",
+	"frame": {"x":131,"y":1033,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0031.png",
+	"frame": {"x":261,"y":1033,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0032.png",
+	"frame": {"x":391,"y":1033,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0033.png",
+	"frame": {"x":521,"y":1033,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0034.png",
+	"frame": {"x":651,"y":1033,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0035.png",
+	"frame": {"x":781,"y":1033,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0036.png",
+	"frame": {"x":1,"y":1291,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0037.png",
+	"frame": {"x":131,"y":1291,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0038.png",
+	"frame": {"x":261,"y":1291,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0039.png",
+	"frame": {"x":391,"y":1291,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0040.png",
+	"frame": {"x":521,"y":1291,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0041.png",
+	"frame": {"x":651,"y":1291,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0042.png",
+	"frame": {"x":781,"y":1291,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0043.png",
+	"frame": {"x":1,"y":1549,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0044.png",
+	"frame": {"x":131,"y":1549,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0045.png",
+	"frame": {"x":261,"y":1549,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0046.png",
+	"frame": {"x":391,"y":1549,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0047.png",
+	"frame": {"x":521,"y":1549,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0048.png",
+	"frame": {"x":521,"y":1549,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0049.png",
+	"frame": {"x":521,"y":1549,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ducking.fbx0050.png",
+	"frame": {"x":521,"y":1549,"w":128,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":256},
+	"sourceSize": {"w":128,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "monsterDuck.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:2ca588988e87da6c4ab551e72d0a4647:8be599d8e51bdd6c7f47d952f8acfbaa:2d6bda30942527a0a7233e6c5edff0f2$"
+}
+}
