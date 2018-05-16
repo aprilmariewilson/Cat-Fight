@@ -13,12 +13,13 @@ var computer = {
 	maxhp: 100,
 	hp: 100,
 	def: 4,
-	mode: 1
+	model: 1
 }
 
 var com, turn, winner;
+var score = 0;
 var defeatedOpponents = [];
-var models = [1, 2, 3, 4, 5, 6];
+var models = [0, 1, 2, 3, 4];
 var select = 3;
 var choose = 0;
 var background = $('#background');
@@ -28,30 +29,31 @@ var battleFrame = $('#battle');
 
 $.getScript('/assets/spritesheets/player-sprite.js');
 $.getScript('/assets/spritesheets/computer-sprite.js');
+$.getScript('/assets/js/animations.js')
 
 $(document).ready(function () {
-	// selectPlayer();
+	selectPlayer();
 	setEnemy();
 	createBattleField();
-	// selectPlayer();
-	
-	// setPlayer('name', 2);
-	// selectPlayer();
 });
 
 //right modal button click
 $(document).on("click", "#right-select", function () {
-	if (select < models.length) {
+	if (select < models.length - 1) {
 		++select;
+		character.src = '/assets/spritesheets/cat-' + select + '.png';
 		//model display changes by one to right
+		console.log(select);
 	}
 });
 
 //left modal button click
 $(document).on("click", "#left-select", function () {
-	if (select > 1) {
+	if (select > 0) {
 		--select;
 		//model display changes by one to left
+		character.src = '/assets/spritesheets/cat-' + select + '.png';
+		console.log(select);
 	}
 });
 
@@ -70,7 +72,6 @@ $(document).on("click", "#select-player", function () {
 $(document).on("click", ".fight-li", function () {
 	fightMove($(this).attr('value'));
 	if (turn) {
-
 		turn = false;
 	}
 });
@@ -83,8 +84,36 @@ $(document).on("click", ".item-li", function () {
 	}
 });
 
-function updateHealth() {
+function updateGame() {
+	$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.maxhp + '</h3>');
+	$('#player-right-health').html('<h3>' + computer.name + ':  ' + computer.hp + ' / ' + computer.maxhp + '</h3>');
+	if (!turn) {
+		if (computer.hp > 0) {
+			computerMove();
+		}
+	}
 
+	if (computer.hp < 1 && player.hp < 1) {
+		//You both lose.
+	} else if (computer.hp < 1) {
+		$('#status-text').text('Battle won! Prepare for next opponent');
+		setTimeout(() => {
+			setEnemy();
+			compInterval = setInterval(compdraw, 100);
+			companimateCat('idle');
+		}, 3000);
+	} else if (player.hp < 1) {
+		$('#status-text').text("You lose! Refresh to play again");
+	}
+}
+
+function computerMove() {
+	setTimeout(function () {
+		opponentMove(1);
+	}, 2200);
+	setTimeout(function () {
+		turn = true;
+	}, 2000);
 }
 
 function setPlayer(playerName) {
@@ -101,7 +130,16 @@ function setPlayer(playerName) {
 		defeatedOpponents.push(select);
 		$('.action-btn').show();
 		turn = true;
+
+		//update player health div
 		$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.hp + '</h3>');
+
+		character.src = player.model;
+
+		canvas = document.getElementById('player-left');
+		canvas.width = canvasWidth;
+		canvas.height = canvasHeight;
+		ctx = canvas.getContext("2d");
 	});
 
 
@@ -111,30 +149,33 @@ function setEnemy() {
 	var random;
 
 	if (models.length === defeatedOpponents.length) {
-		//trigger win
+		$('#status-text').text('You won the game!');
+	} else {
+
+		//loops through as long as length of models < length of defeatedOpponents (all models have been used)
+		//Generates a random number and verifies it has not been used && is less than models length
+		while (models.length > defeatedOpponents.length) {
+			random = Math.floor(Math.random() * models.length + 1) + 1;
+			if (!defeatedOpponents.includes(random) && random <= models.length) break;
+		}
+
+		//Gets a cat by id and saves it as the computer object
+		$.get('/api/cats/id/' + random, function (data, status) {
+			computer.name = data.cat_name;
+			computer.maxhp = data.hp;
+			computer.hp = data.hp;
+			computer.atk = data.atk;
+			computer.def = data.def;
+			computer.model = data.model;
+			defeatedOpponents.push(random);
+
+			computer.maxhp = 25;
+			computer.hp = 25;
+			$('#player-right-health').html('<h3>' + computer.name + ':  ' + computer.hp + ' / ' + computer.hp + '</h3>');
+			compcharacter.src = computer.model;
+		});
+
 	}
-
-	//loops through as long as length of models < length of defeatedOpponents (all models have been used)
-	//Generates a random number and verifies it has not been used && is less than models length
-	while (models.length > defeatedOpponents.length) {
-		random = Math.floor(Math.random() * models.length + 1) + 1;
-		if (!defeatedOpponents.includes(random) && random <= models.length) break;
-	}
-
-
-
-	//Gets a cat by id and saves it as the computer object
-	$.get('/api/cats/id/' + random, function (data, status) {
-		computer.name = data.cat_name;
-		computer.maxhp = data.hp;
-		computer.hp = data.hp;
-		computer.atk = data.atk;
-		computer.def = data.def;
-		computer.model = data.model;
-		defeatedOpponents.push(random);
-		console.log(computer.name);
-		$('#player-right-health').html('<h3>' + computer.name + ':  ' + computer.hp + ' / ' + computer.hp + '</h3>');
-	});
 
 
 }
@@ -143,8 +184,7 @@ function selectPlayer() {
 	//hide player/com divs
 	$(background).empty();
 	$('.action-btn').hide();
-	//Example CSS for placement of image in modal
-	$('#modal-image').css('background-color', 'green');
+
 	$('#modal-image').css('width', '200px');
 	$('#modal-image').css('height', '20vh');
 
@@ -164,41 +204,10 @@ function createBattleField() {
 
 
 	$(statusDiv).append(statusText);
-	/* 
-		To do: Transfer all of the jquery css statements into a css file to reduce code length
 
-		background = $('#background');
-		player_left = $('#player-left');
-		player_right = $('#player-right');
-		battleFrame = $('#battle');
-
-		Plus the divs created above this statement.
-	*/
 	$(statusDiv).css('background-color', 'yellow');
 
 	$(statusText).attr('id', 'status-text');
-
-	$(player_right).css('align-self', 'flex-end');
-	$(player_right).css('height', '15vh');
-	$(player_right).css('width', '10em');
-
-	$(player_left).css('align-self', 'flex-end');
-
-	$(player_left).css('height', '15vh');
-	$(player_left).css('width', '10em');
-
-	$(background).css('display', 'flex');
-	$(background).css('justify-content', 'space-between');
-	$(background).css('height', '40vh');
-
-	$(battleFrame).css('align-content', 'center');
-	$(battleFrame).css('height', 'auto');
-
-	$(statusText).css('align-text', 'center');
-	$(statusText).text('Status Text');
-
-	$(background).css('background-image', 'url(/assets/backgrounds/background-1.png');
-	$(background).css('background-size', 'contain');
 
 	$(background).append(player_left);
 	$(background).append(player_right);
@@ -215,7 +224,10 @@ function fightMove(amove) {
 		case 1:
 			//Attack
 			animatePlayer(function () {
-
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -245,7 +257,9 @@ function opponentMove(amove) {
 		case 1:
 			//Attack
 			animateOpponent(function () {
-
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
+				updateGame();
 			});
 			break;
 
@@ -269,81 +283,6 @@ function opponentMove(amove) {
 	}
 }
 
-function animatePlayer(attack) {
-	//We use a callback function to determine what happens; this function is defined in the switch statement in fightMove()
-
-
-	//Start walk right animation
-	animateCat('walk');
-
-	$(player_left).animate({ left: '23em' }, 1000, function () {
-		//End walk right animation
-		animateCat('idle');
-		//This is where we will animate the executed move
-		attack();
-
-		//Along with the attack animation
-		animateCat('kick');
-
-		$(player_right).stop().delay(750).animate({ left: '2em' }, 200, function () {
-			//This is where we animate the opponent getting hit
-			companimateCat('gethit');
-			//This is also where we animate the cat walking back
-			flipHorizontal();
-			animateCat('walk');
-
-			$(player_left).stop().animate({ left: '0em' }, 1000, function () {
-
-				$(player_right).animate({
-					left: '0em'
-				}, 200, function () {
-					//And this is where both player and opponent are back at starting positions
-					flipHorizontal();
-					animateCat('idle');
-				});
-			}
-			)
-		}
-		)
-
-	});
-}
-
-function animateOpponent(attack) {
-	//This is the opposite of animatePlayer
-	//Start opponent walking left animation here
-	companimateCat('walk');
-
-	$(player_right).animate({ left: '-23em' }, 1000, function () {
-		//End walk left animation
-		companimateCat('idle');
-		//This is where we will animate the executed move (opponent)
-		attack();
-
-		companimateCat('kick');
-		$(player_left).stop().delay(750).animate({ left: '-2em' }, 200, function () {
-			//This is where we animate the opponent getting hit (knocked back is functioning)
-			animateCat('gethit');
-			compflipHorizontal();
-			companimateCat('walk');
-			$(player_right).stop().animate({ left: '0em' }, 1000, function () {
-				//This is where we animate the player walking right
-				$(player_left).animate({
-					left: '0em'
-				}, 200, function () {
-					//And this is where both player and opponent are back at starting positions
-					compflipHorizontal();
-					companimateCat('idle');
-				});
-			}
-			)
-		}
-		)
-
-	});
-
-
-}
 
 //Selects item to use
 function useItem(anitem) {

@@ -60,7 +60,7 @@ var compctx = compcanvas.getContext("2d");
 var compcharacter = new Image();
 
 //Setting the source to the image file 
-compcharacter.src = "/assets/spritesheets/cat-5.png";
+compcharacter.src = "/assets/spritesheets/cat-0.png";
 var compflipped = false;
 
 
@@ -84,7 +84,8 @@ function compdraw() {
 }
 
 compflipHorizontal();
-setInterval(compdraw, 100);
+var compInterval = setInterval(compdraw, 100);
+
 
 function companimateCat(animation, endAnimation) {
     var compidle = {
@@ -123,16 +124,30 @@ function companimateCat(animation, endAnimation) {
             compsrcY = 64;
             compframeCount = 8;
             break;
+
+        case 'dead':
+
+            compcurFrame = 0;
+            compsrcY = 256;
+            compframeCount = 9;
+            setTimeout(() => {
+                clearInterval(compInterval);
+            }, 600);
+            break;
+
+        default:
+            break;
+
     }
 }
 
 function compflipHorizontal() {
 
-    if (!flipped) {
-        compctx.translate(width, 0);
+    if (!compflipped) {
+        compctx.translate(compwidth, 0);
         compctx.scale(-1, 1);
     } else {
-        compctx.translate(width, 0);
+        compctx.translate(compwidth, 0);
         compctx.scale(1, -1);
     }
 }
