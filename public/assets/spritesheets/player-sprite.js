@@ -60,7 +60,8 @@ var ctx = canvas.getContext("2d");
 var character = new Image();
 
 //Setting the source to the image file 
-character.src = "/assets/spritesheets/spritesheet.png";
+character.src = "/assets/spritesheets/cat-3.png";
+var flipped = false;
 
 
 function updateFrame() {
@@ -121,5 +122,16 @@ function animateCat(animation, endAnimation) {
             srcY = 64;
             frameCount = 8;
             break;
+    }
+}
+
+function flipHorizontal() {
+
+    if(!flipped) {
+        ctx.translate(width, 0);
+        ctx.scale(-1, 1);
+    } else {
+        ctx.translate(width, 0);
+        ctx.scale(1, -1);
     }
 }

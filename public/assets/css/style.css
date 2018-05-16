@@ -1,3 +1,7 @@
+* {
+	font-family: 'Skranji', cursive;
+}
+
 #battle{
 		margin: auto;
 		margin-top: 10vh;
@@ -25,4 +29,20 @@
 	display: flex;
 	align-self: flex-end;
 	flex-direction: row;
+}
+
+#player-left-health {
+	text-align: right;
+	margin-right: 7em;
+}
+
+#player-right-health {
+	text-align: left;
+	margin-left: 7em;
+}
+
+.player-health {
+	align-content: center;
+	margin: auto;
+	text-align: center;
 }
