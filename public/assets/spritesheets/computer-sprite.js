@@ -179,7 +179,7 @@ function companimateCat(animation, endAnimation) {
             }, 900);
             break;
 
-        case 'twoSideAttack':
+        case 'doubleAttack':
             compcurFrame = 0;
             compsrcY = 768
             compframeCount = 8;

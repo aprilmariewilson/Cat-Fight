@@ -29,7 +29,7 @@ var battleFrame = $('#battle');
 
 $.getScript('/assets/spritesheets/player-sprite.js');
 $.getScript('/assets/spritesheets/computer-sprite.js');
-$.getScript('/assets/js/animations.js')
+$.getScript('/assets/js/animations.js');
 
 $(document).ready(function () {
 	selectPlayer();
@@ -224,6 +224,7 @@ function fightMove(amove) {
 		case 1:
 			//Flying kick
 			animatePlayer(function () {
+				animateCat('kick');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
 				// turn = false;
@@ -235,66 +236,102 @@ function fightMove(amove) {
 			//Roundhouse
 			//Default to animate opponent to show off dropdown menu option 2
 			animatePlayer(function () {
-
+				animateCat('punch');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
 		case 3:
 			//Another move/3rd list item
 			animatePlayer(function () {
-
+				animateCat('powerShot');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
-			case 4:
+		case 4:
 			//Roundhouse
 			//Default to animate opponent to show off dropdown menu option 2
 			animatePlayer(function () {
-
+				animateCat('flyingKick');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
 		case 5:
 			//Another move/3rd list item
 			animatePlayer(function () {
-
+				animateCat('uppercut');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
-			case 6:
+		case 6:
 			//Roundhouse
 			//Default to animate opponent to show off dropdown menu option 2
 			animatePlayer(function () {
-
+				animateCat('superUppercut');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
 		case 7:
 			//Another move/3rd list item
 			animatePlayer(function () {
-
+				animateCat('combo');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
-			case 8:
+		case 8:
 			//Roundhouse
 			//Default to animate opponent to show off dropdown menu option 2
 			animatePlayer(function () {
-
+				animateCat('doubleKick');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
 		case 9:
 			//Another move/3rd list item
 			animatePlayer(function () {
-
+				animateCat('highKick');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
-			case 10:
+		case 10:
 			//Another move/3rd list item
 			animatePlayer(function () {
-
+				animateCat('doubleAttack');
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
@@ -305,75 +342,121 @@ function fightMove(amove) {
 }
 
 function opponentMove(amove) {
+	var moves = new Array();
+moves[0] = "1";
+moves[1] = "2";
+moves[2] = "3";
+moves[3] = "4";
+moves[4] = "5";
+moves[5] = "6";
+moves[6] = "7";
+moves[7] = "8";
+moves[8] = "9";
+moves[9] = "10";
+
+
+var amove = moves[Math.floor(Math.random()*10)];
+var result;
+	
+
+
 	switch (parseInt(amove)) {
 		case 1:
 			//Flying kick
 			animateOpponent(function () {
-				player.hp -= computer.atk;
-				if (player.hp < 0) player.hp = 0;
-				updateGame();
+				companimateCat('kick');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
 		case 2:
 			//Roundhouse
 			animateOpponent(function () {
-
+				companimateCat('punch');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
 		case 3:
 			//Another move
 			animateOpponent(function () {
-
+				companimateCat('powerShot');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
 		case 4:
 			//Roundhouse
 			animateOpponent(function () {
-
+				companimateCat('flyingKick');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
 		case 5:
 			//Another move
 			animateOpponent(function () {
-
+				companimateCat('uppercut');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
 		case 6:
 			//Roundhouse
 			animateOpponent(function () {
-
+				companimateCat('supperUppercut');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
 		case 7:
 			//Another move
 			animateOpponent(function () {
-
+				companimateCat('combo');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 		case 8:
 			//Roundhouse
 			animateOpponent(function () {
-
+				companimateCat('doubleKick');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
 		case 9:
 			//Another move
 			animateOpponent(function () {
-
+				companimateCat('highKick');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
 		case 10:
 			//Another move
 			animateOpponent(function () {
-
+				companimateCat('doubleAttack');
+				// player.hp -= computer.atk;
+				// if (player.hp < 0) player.hp = 0;
+				// updateGame();
 			});
 			break;
 
