@@ -107,6 +107,96 @@ function animateCat(animation, endAnimation) {
             }, 900);
             break;
 
+        case 'punch':
+            curFrame = 0;
+            srcY = 384
+            frameCount = 6;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
+        case 'powerShot':
+            curFrame = 0;
+            srcY = 320
+            frameCount = 7;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
+        case 'flyingKick':
+            curFrame = 0;
+            srcY = 448
+            frameCount = 8;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
+        case 'superUppercut':
+            curFrame = 0;
+            srcY = 512
+            frameCount = 13;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
+        case 'combo':
+            curFrame = 0;
+            srcY = 576
+            frameCount = 10;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
+        case 'doubleKick':
+            curFrame = 0;
+            srcY = 640
+            frameCount = 13;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
+        case 'highKick':
+            curFrame = 0;
+            srcY = 704
+            frameCount = 6;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
+        case 'doubleAttack':
+            curFrame = 0;
+            srcY = 768
+            frameCount = 8;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
+            case 'uppercut':
+            curFrame = 0;
+            srcY = 960
+            frameCount = 6;
+            setTimeout(() => {
+                srcY = idle.y;
+                frameCount = idle.frame;
+            }, 900);
+            break;
+
         case 'gethit':
             curFrame = 0;
             srcY = 256
@@ -128,12 +218,13 @@ function animateCat(animation, endAnimation) {
             srcY = 256;
             frameCount = 9;
             setTimeout(() => {
-                clearInterval(playerInterval);
+                clearInterval(Interval);
             }, 600);
             break;
 
         default:
             break;
+
     }
 }
 

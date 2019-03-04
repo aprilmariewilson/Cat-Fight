@@ -1,6 +1,7 @@
+// player animations
+
 function animatePlayer(attack) {
     //We use a callback function to determine what happens; this function is defined in the switch statement in fightMove()
-
 
     //Start walk right animation
     animateCat('walk');
@@ -10,8 +11,37 @@ function animatePlayer(attack) {
         animateCat('idle');
 
         //Along with the attack animation
-        animateCat('kick');
+        
+        $('.moves').find('button').attr('id');
 
+        console.log($('button').attr('id'));
+        // var move = $("button");
+    // console.log(move);
+        // if (move == 1){
+        //     animateCat('kick');
+        // } else if (move == 2){
+        //     animateCat('punch');
+        // } else if (move == 3){
+        //     animateCat('powerShot');
+        // } else if (move == 4){
+        //     animateCat('flyingKick');
+        // } else if (move == 5){
+        //     animateCat('uppercut');
+        // } else if (move == 6){
+        //     animateCat('superUppercut');
+        // } else if (move == 7){
+        //     animateCat('combo');
+        // } else if (move == 8){
+        //     animateCat('doubleKick');
+        // } else if (move == 9){
+        //     animateCat('highKick');
+        // } else if (move == 10){
+        //     animateCat('doubleAttack');
+        // } else {
+        //     console.log('error')
+        // };
+
+        
         $(player_right).stop().delay(750).animate({ left: '2em' }, 200, function () {
             //attack callback, determines how much hp they lose etc.
             attack();
@@ -34,13 +64,13 @@ function animatePlayer(attack) {
                     flipHorizontal();
                     animateCat('idle');
                 });
-            }
-            )
-        }
-        )
-
+            });
+        });
     });
-}
+};
+
+
+// computer animations
 
 function animateOpponent(attack) {
     //This is the opposite of animatePlayer
@@ -72,12 +102,7 @@ function animateOpponent(attack) {
                     compflipHorizontal();
                     companimateCat('idle');
                 });
-            }
-            )
-        }
-        )
-
+            });
+        });
     });
-
-
-}
+};

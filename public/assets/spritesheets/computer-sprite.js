@@ -109,6 +109,86 @@ function companimateCat(animation, endAnimation) {
             }, 900);
             break;
 
+        case 'punch':
+            compcurFrame = 0;
+            compsrcY = 384
+            compframeCount = 6;
+            setTimeout(() => {
+                compsrcY = compidle.y;
+                compframeCount = compidle.frame;
+            }, 900);
+            break;
+
+        case 'powerShot':
+            compcurFrame = 0;
+            compsrcY = 320
+            compframeCount = 7;
+            setTimeout(() => {
+                compsrcY = compidle.y;
+                compframeCount = compidle.frame;
+            }, 900);
+            break;
+
+        case 'flyingKick':
+            compcurFrame = 0;
+            compsrcY = 448
+            compframeCount = 8;
+            setTimeout(() => {
+                compsrcY = compidle.y;
+                compframeCount = compidle.frame;
+            }, 900);
+            break;
+
+        case 'superUppercut':
+            compcurFrame = 0;
+            compsrcY = 512
+            compframeCount = 13;
+            setTimeout(() => {
+                compsrcY = compidle.y;
+                compframeCount = compidle.frame;
+            }, 900);
+            break;
+
+        case 'combo':
+            compcurFrame = 0;
+            compsrcY = 576
+            compframeCount = 10;
+            setTimeout(() => {
+                compsrcY = compidle.y;
+                compframeCount = compidle.frame;
+            }, 900);
+            break;
+
+        case 'doubleKick':
+            compcurFrame = 0;
+            compsrcY = 640
+            compframeCount = 13;
+            setTimeout(() => {
+                compsrcY = compidle.y;
+                compframeCount = compidle.frame;
+            }, 900);
+            break;
+
+        case 'highKick':
+            compcurFrame = 0;
+            compsrcY = 640
+            compframeCount = 6;
+            setTimeout(() => {
+                compsrcY = compidle.y;
+                compframeCount = compidle.frame;
+            }, 900);
+            break;
+
+        case 'twoSideAttack':
+            compcurFrame = 0;
+            compsrcY = 768
+            compframeCount = 8;
+            setTimeout(() => {
+                compsrcY = compidle.y;
+                compframeCount = compidle.frame;
+            }, 900);
+            break;
+
         case 'gethit':
             compcurFrame = 0;
             compsrcY = 256
@@ -126,7 +206,6 @@ function companimateCat(animation, endAnimation) {
             break;
 
         case 'dead':
-
             compcurFrame = 0;
             compsrcY = 256;
             compframeCount = 9;

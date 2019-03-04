@@ -77,12 +77,12 @@ $(document).on("click", ".fight-li", function () {
 });
 
 // "Item" dropdown menu list items
-$(document).on("click", ".item-li", function () {
-	if (turn) {
-		useItem($(this).attr('value'));
-		turn = false;
-	}
-});
+// $(document).on("click", ".item-li", function () {
+// 	if (turn) {
+// 		useItem($(this).attr('value'));
+// 		turn = false;
+// 	}
+// });
 
 function updateGame() {
 	$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.maxhp + '</h3>');
@@ -222,24 +222,76 @@ function createBattleField() {
 function fightMove(amove) {
 	switch (parseInt(amove)) {
 		case 1:
-			//Attack
+			//Flying kick
 			animatePlayer(function () {
-				computer.hp -= player.atk;
-				if (computer.hp < 0) computer.hp = 0;
-				turn = false;
-				updateGame();
+				// computer.hp -= player.atk;
+				// if (computer.hp < 0) computer.hp = 0;
+				// turn = false;
+				// updateGame();
 			});
 			break;
 
 		case 2:
 			//Roundhouse
 			//Default to animate opponent to show off dropdown menu option 2
-			animateOpponent(function () {
+			animatePlayer(function () {
 
 			});
 			break;
 
 		case 3:
+			//Another move/3rd list item
+			animatePlayer(function () {
+
+			});
+			break;
+
+			case 4:
+			//Roundhouse
+			//Default to animate opponent to show off dropdown menu option 2
+			animatePlayer(function () {
+
+			});
+			break;
+
+		case 5:
+			//Another move/3rd list item
+			animatePlayer(function () {
+
+			});
+			break;
+
+			case 6:
+			//Roundhouse
+			//Default to animate opponent to show off dropdown menu option 2
+			animatePlayer(function () {
+
+			});
+			break;
+
+		case 7:
+			//Another move/3rd list item
+			animatePlayer(function () {
+
+			});
+			break;
+
+			case 8:
+			//Roundhouse
+			//Default to animate opponent to show off dropdown menu option 2
+			animatePlayer(function () {
+
+			});
+			break;
+
+		case 9:
+			//Another move/3rd list item
+			animatePlayer(function () {
+
+			});
+			break;
+
+			case 10:
 			//Another move/3rd list item
 			animatePlayer(function () {
 
@@ -255,7 +307,7 @@ function fightMove(amove) {
 function opponentMove(amove) {
 	switch (parseInt(amove)) {
 		case 1:
-			//Attack
+			//Flying kick
 			animateOpponent(function () {
 				player.hp -= computer.atk;
 				if (player.hp < 0) player.hp = 0;
@@ -277,6 +329,54 @@ function opponentMove(amove) {
 			});
 			break;
 
+		case 4:
+			//Roundhouse
+			animateOpponent(function () {
+
+			});
+			break;
+
+		case 5:
+			//Another move
+			animateOpponent(function () {
+
+			});
+			break;
+
+		case 6:
+			//Roundhouse
+			animateOpponent(function () {
+
+			});
+			break;
+
+		case 7:
+			//Another move
+			animateOpponent(function () {
+
+			});
+			break;
+		case 8:
+			//Roundhouse
+			animateOpponent(function () {
+
+			});
+			break;
+
+		case 9:
+			//Another move
+			animateOpponent(function () {
+
+			});
+			break;
+
+		case 10:
+			//Another move
+			animateOpponent(function () {
+
+			});
+			break;
+
 		default:
 			break;
 
@@ -285,22 +385,22 @@ function opponentMove(amove) {
 
 
 //Selects item to use
-function useItem(anitem) {
-	switch (parseInt(amove)) {
-		case 1:
-			//Use potion
-			break;
+// function useItem(anitem) {
+// 	switch (parseInt(amove)) {
+// 		case 1:
+// 			//Use potion
+// 			break;
 
-		case 2:
-			//Another Item
-			break;
+// 		case 2:
+// 			//Another Item
+// 			break;
 
-		case 3:
-			//Other Item
-			break;
+// 		case 3:
+// 			//Other Item
+// 			break;
 
-		default:
-			break;
+// 		default:
+// 			break;
 
-	}
-}
+// 	}
+// }
