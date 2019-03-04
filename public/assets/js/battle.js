@@ -342,23 +342,22 @@ function fightMove(amove) {
 }
 
 function opponentMove(amove) {
-	var moves = new Array();
-moves[0] = "1";
-moves[1] = "2";
-moves[2] = "3";
-moves[3] = "4";
-moves[4] = "5";
-moves[5] = "6";
-moves[6] = "7";
-moves[7] = "8";
-moves[8] = "9";
-moves[9] = "10";
+	console.log('you are in the function');
+	var movesArray = new Array();
+movesArray[0] = "1";
+movesArray[1] = "2";
+movesArray[2] = "3";
+movesArray[3] = "4";
+movesArray[4] = "5";
+movesArray[5] = "6";
+movesArray[6] = "7";
+movesArray[7] = "8";
+movesArray[8] = "9";
+movesArray[9] = "10";
 
-
-var amove = moves[Math.floor(Math.random()*10)];
-var result;
-	
-
+console.log(movesArray);
+var amove = movesArray[Math.floor(Math.random()*10)];
+console.log('comp generated variable', amove);
 
 	switch (parseInt(amove)) {
 		case 1:

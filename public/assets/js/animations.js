@@ -12,11 +12,11 @@ function animatePlayer(attack) {
         animateCat('idle');
 
         //Along with the attack animation
+        //attack callback, determines how much hp they lose etc.
             attack();
         
         $(player_right).stop().delay(750).animate({ left: '2em' }, 200, function () {
-            //attack callback, determines how much hp they lose etc.
-            // attack();
+           
             //This is where we animate the opponent getting hit
             if(computer.hp < 1) {
                 companimateCat('dead');
@@ -54,11 +54,12 @@ function animateOpponent(attack) {
         companimateCat('idle');
         //This is where we will animate the executed move (opponent)
 
-        companimateCat('kick');
-        
+        // companimateCat('kick');
+        attack();
+
         $(player_left).stop().delay(750).animate({ left: '-2em' }, 200, function () {
-            attack();
             //This is where we animate the opponent getting hit (knocked back is functioning)
+
             if(player.hp < 1) {
                 animateCat('dead');
             } else {
