@@ -227,8 +227,8 @@ function fightMove(amove) {
 				animateCat('kick');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -239,8 +239,8 @@ function fightMove(amove) {
 				animateCat('punch');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -250,8 +250,8 @@ function fightMove(amove) {
 				animateCat('powerShot');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -262,8 +262,8 @@ function fightMove(amove) {
 				animateCat('flyingKick');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -273,8 +273,8 @@ function fightMove(amove) {
 				animateCat('uppercut');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -285,8 +285,8 @@ function fightMove(amove) {
 				animateCat('superUppercut');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -296,8 +296,8 @@ function fightMove(amove) {
 				animateCat('combo');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -308,8 +308,8 @@ function fightMove(amove) {
 				animateCat('doubleKick');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -319,8 +319,8 @@ function fightMove(amove) {
 				animateCat('highKick');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -330,8 +330,8 @@ function fightMove(amove) {
 				animateCat('doubleAttack');
 				// computer.hp -= player.atk;
 				// if (computer.hp < 0) computer.hp = 0;
-				// turn = false;
-				// updateGame();
+				turn = false;
+				updateGame();
 			});
 			break;
 
@@ -342,23 +342,20 @@ function fightMove(amove) {
 }
 
 function opponentMove(amove) {
-	console.log('you are in the function');
 	var movesArray = new Array();
-movesArray[0] = "1";
-movesArray[1] = "2";
-movesArray[2] = "3";
-movesArray[3] = "4";
-movesArray[4] = "5";
-movesArray[5] = "6";
-movesArray[6] = "7";
-movesArray[7] = "8";
-movesArray[8] = "9";
-movesArray[9] = "10";
+	movesArray[0] = "1";
+	movesArray[1] = "2";
+	movesArray[2] = "3";
+	movesArray[3] = "4";
+	movesArray[4] = "5";
+	movesArray[5] = "6";
+	movesArray[6] = "7";
+	movesArray[7] = "8";
+	movesArray[8] = "9";
+	movesArray[9] = "10";
 
-console.log(movesArray);
-var amove = movesArray[Math.floor(Math.random()*10)];
-console.log('comp generated variable', amove);
-
+	console.log(movesArray);
+	var amove = movesArray[Math.floor(Math.random() * 10)];
 	switch (parseInt(amove)) {
 		case 1:
 			//Flying kick
@@ -366,7 +363,7 @@ console.log('comp generated variable', amove);
 				companimateCat('kick');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
@@ -376,7 +373,7 @@ console.log('comp generated variable', amove);
 				companimateCat('punch');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
@@ -386,7 +383,7 @@ console.log('comp generated variable', amove);
 				companimateCat('powerShot');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
@@ -396,7 +393,7 @@ console.log('comp generated variable', amove);
 				companimateCat('flyingKick');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
@@ -406,7 +403,7 @@ console.log('comp generated variable', amove);
 				companimateCat('uppercut');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
@@ -416,7 +413,7 @@ console.log('comp generated variable', amove);
 				companimateCat('supperUppercut');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
@@ -426,7 +423,7 @@ console.log('comp generated variable', amove);
 				companimateCat('combo');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 		case 8:
@@ -435,7 +432,7 @@ console.log('comp generated variable', amove);
 				companimateCat('doubleKick');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
@@ -445,7 +442,7 @@ console.log('comp generated variable', amove);
 				companimateCat('highKick');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
@@ -455,7 +452,7 @@ console.log('comp generated variable', amove);
 				companimateCat('doubleAttack');
 				// player.hp -= computer.atk;
 				// if (player.hp < 0) player.hp = 0;
-				// updateGame();
+				updateGame();
 			});
 			break;
 
