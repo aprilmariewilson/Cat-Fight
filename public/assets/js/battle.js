@@ -225,8 +225,8 @@ function fightMove(amove) {
 			//Flying kick
 			animatePlayer(function () {
 				animateCat('kick');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -237,8 +237,8 @@ function fightMove(amove) {
 			//Default to animate opponent to show off dropdown menu option 2
 			animatePlayer(function () {
 				animateCat('punch');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -248,8 +248,8 @@ function fightMove(amove) {
 			//Another move/3rd list item
 			animatePlayer(function () {
 				animateCat('powerShot');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -260,8 +260,8 @@ function fightMove(amove) {
 			//Default to animate opponent to show off dropdown menu option 2
 			animatePlayer(function () {
 				animateCat('flyingKick');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -271,8 +271,8 @@ function fightMove(amove) {
 			//Another move/3rd list item
 			animatePlayer(function () {
 				animateCat('uppercut');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -283,8 +283,8 @@ function fightMove(amove) {
 			//Default to animate opponent to show off dropdown menu option 2
 			animatePlayer(function () {
 				animateCat('superUppercut');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -294,8 +294,8 @@ function fightMove(amove) {
 			//Another move/3rd list item
 			animatePlayer(function () {
 				animateCat('combo');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -306,8 +306,8 @@ function fightMove(amove) {
 			//Default to animate opponent to show off dropdown menu option 2
 			animatePlayer(function () {
 				animateCat('doubleKick');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -317,8 +317,8 @@ function fightMove(amove) {
 			//Another move/3rd list item
 			animatePlayer(function () {
 				animateCat('highKick');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -328,8 +328,8 @@ function fightMove(amove) {
 			//Another move/3rd list item
 			animatePlayer(function () {
 				animateCat('doubleAttack');
-				// computer.hp -= player.atk;
-				// if (computer.hp < 0) computer.hp = 0;
+				computer.hp -= player.atk;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});
@@ -361,8 +361,8 @@ function opponentMove(amove) {
 			//Flying kick
 			animateOpponent(function () {
 				companimateCat('kick');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -371,8 +371,8 @@ function opponentMove(amove) {
 			//Roundhouse
 			animateOpponent(function () {
 				companimateCat('punch');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -381,8 +381,8 @@ function opponentMove(amove) {
 			//Another move
 			animateOpponent(function () {
 				companimateCat('powerShot');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -391,8 +391,8 @@ function opponentMove(amove) {
 			//Roundhouse
 			animateOpponent(function () {
 				companimateCat('flyingKick');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -401,8 +401,8 @@ function opponentMove(amove) {
 			//Another move
 			animateOpponent(function () {
 				companimateCat('uppercut');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -411,8 +411,8 @@ function opponentMove(amove) {
 			//Roundhouse
 			animateOpponent(function () {
 				companimateCat('supperUppercut');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -421,8 +421,8 @@ function opponentMove(amove) {
 			//Another move
 			animateOpponent(function () {
 				companimateCat('combo');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -430,8 +430,8 @@ function opponentMove(amove) {
 			//Roundhouse
 			animateOpponent(function () {
 				companimateCat('doubleKick');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -440,8 +440,8 @@ function opponentMove(amove) {
 			//Another move
 			animateOpponent(function () {
 				companimateCat('highKick');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
@@ -450,8 +450,8 @@ function opponentMove(amove) {
 			//Another move
 			animateOpponent(function () {
 				companimateCat('doubleAttack');
-				// player.hp -= computer.atk;
-				// if (player.hp < 0) player.hp = 0;
+				player.hp -= computer.atk;
+				if (player.hp < 0) player.hp = 0;
 				updateGame();
 			});
 			break;
