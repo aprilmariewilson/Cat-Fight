@@ -32,7 +32,6 @@ module.exports = function(app) {
   });
   // POST route for saving new cat
   app.post("/api/cats", function(req, res) {
-    console.log(req.body);
     db.Cat.create({
       cat_name: req.body.cat_name,
       hp: req.body.hp,
@@ -55,7 +54,6 @@ module.exports = function(app) {
   });
   // PUT route for updating cats
   app.put("/api/cats", function(req, res) {
-      console.log(req.body);
     db.Cat.update(req.body, {
       where: {
         cat_name: req.body.cat_name

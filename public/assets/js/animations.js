@@ -7,7 +7,7 @@ function animatePlayer(attack) {
     //Start walk right animation
     animateCat('walk');
 
-    $(player_left).animate({ left: '29em' }, 1000, function () {
+    $(player_left).animate({ left: '37.5%' }, 1000, function () {
         //End walk right animation
         animateCat('idle');
 
@@ -49,7 +49,7 @@ function animateOpponent(attack) {
     //Start opponent walking left animation here
     companimateCat('walk');
 
-    $(player_right).animate({ left: '-29em' }, 1000, function () {
+    $(player_right).animate({ left: '-37.5%' }, 1000, function () {
         //End walk left animation
         companimateCat('idle');
         //This is where we will animate the executed move (opponent)

@@ -7,6 +7,7 @@ var basename = path.basename(__filename);
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
+const Op = Sequelize.Op
 
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
@@ -15,7 +16,21 @@ if (config.use_env_variable) {
     config.database,
     config.username,
     config.password,
-    config
+    config,
+    {
+      dialect: 'mysql',
+      logging: false,
+      freezeTableName: true,
+      operatorsAliases: {
+        $and: Op.and,
+        $or: Op.or,
+        $eq: Op.eq,
+        $gt: Op.gt,
+        $lt: Op.lt,
+        $lte: Op.lte,
+        $like: Op.like
+      }
+    }
   );
 }
 
