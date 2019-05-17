@@ -10,3 +10,12 @@ CREATE TABLE Cats (
 		model VARCHAR(255) NOT NULL,
     primary key(id)
 );
+
+DROP TABLE IF EXISTS Moves;
+CREATE TABLE Moves (
+	  id INT NOT NULL IDENTITY(1, 1),
+    move_name VARCHAR(64) NOT NULL,
+    atk INT(4) NOT NULL,
+    def INT(4) NOT NULL,
+    primary key(id)
+);

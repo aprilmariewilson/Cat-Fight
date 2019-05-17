@@ -18,6 +18,7 @@ app.set("view engine", "handlebars");
 //Use eg. in main.handlebars the link to css will be "./assets/css/style.css"
 app.use('/assets', express.static('public/assets'));
 require("./controllers/cat_controllers")(app);
+require("./controllers/moves_controllers")(app);
 
 app.listen(PORT, function() {
 	console.log("app now listening on PORT: " + PORT);
