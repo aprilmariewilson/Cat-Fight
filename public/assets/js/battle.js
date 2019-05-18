@@ -95,30 +95,60 @@ function updateGame() {
 	$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.maxhp + '</h3>');
 	$('#player-right-health').html('<h3>' + computer.name + ':  ' + computer.hp + ' / ' + computer.maxhp + '</h3>');
 	if (!turn) {
-		if (computer.hp > 0) {
+		if (computer.hp > 0 && player.hp > 0) {
 			computerMove();
-		} 
+		}
 	}
 
 	if (computer.hp < 1 && player.hp < 1) {
-		//You both lose.
-		//create modal for losing
+		$('#loseModal').modal("show");
+		showLoser();
+
 	} else if (computer.hp < 1) {
-		//set modal for you winning!!!
-		playerWins();
+		setTimeout(() => {
+			$('#winModal').modal("show");
+			showPlayer();
+		}, 3000)
 	} else if (player.hp < 1) {
 		///create a modal for you losing
-		$('#status-text').text("You lose! Refresh to play again");
+		$('#loseModal').modal("show");
+		showLoser();
 	}
 }
-function playerWins(){
+//close you lose game modal
+$(document).on("click", "#start-again", function () {
+	$('#loseModal').modal("hide");
+	$('#status-text').text('fight!');
+	playerLoses();
+});
+
+//close you won game modal
+$(document).on("click", "#next-game", function () {
+	$('#winModal').modal("hide");
+	$('#status-text').text('fight!');
+	playerWins();
+});
+
+//reset game with added player points
+function playerWins() {
 	setTimeout(() => {
-		addPoints();
+		resetPlayer();
 		setEnemy();
 		compInterval = setInterval(compdraw, 100);
 		companimateCat('idle');
-	}, 3000)
+	}, 1500)
 }
+
+function playerLoses() {
+	setTimeout(() => {
+		resetPlayer();
+		setEnemy();
+		// playerInterval = setInterval(draw, 100);
+		animateCat('idle');
+	}, 1500)
+}
+
+//computers move
 function computerMove() {
 	setTimeout(function () {
 		opponentMove(1);
@@ -129,9 +159,35 @@ function computerMove() {
 }
 
 //if player wins add health for next battle
-function addPoints(){
-		player.hp += 75;
-		$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.maxhp + '</h3>');
+function addPoints() {
+	player.hp += 75;
+	$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.maxhp + '</h3>');
+}
+
+function showLoser() {
+	character.src = player.model;
+	canvas = document.getElementById('player-loss');
+	canvas.width = canvasWidth;
+	canvas.height = canvasHeight;
+	ctx = this.canvas.getContext("2d");
+};
+
+
+function showPlayer() {
+	$('.win-name').html('<h3>' + player.name + '</h3>')
+	character.src = player.model;
+	canvas = document.getElementById('player-win');
+	canvas.width = canvasWidth;
+	canvas.height = canvasHeight;
+	ctx = this.canvas.getContext("2d");
+};
+function resetPlayer() {
+	addPoints();
+	character.src = player.model;
+	canvas = document.getElementById('player-left');
+	canvas.width = canvasWidth;
+	canvas.height = canvasHeight;
+	ctx = canvas.getContext("2d");
 }
 
 function setPlayer(playerName) {
@@ -151,9 +207,7 @@ function setPlayer(playerName) {
 
 		//update player health div
 		$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.hp + '</h3>');
-
 		character.src = player.model;
-
 		canvas = document.getElementById('player-left');
 		canvas.width = canvasWidth;
 		canvas.height = canvasHeight;
@@ -196,6 +250,7 @@ function setEnemy() {
 
 
 }
+
 
 function selectPlayer() {
 	//hide player/com divs
@@ -248,7 +303,7 @@ function fightMove(amove) {
 				animateCat('kick');
 				computer.hp -= 30;
 				player.hp -= 10;
-				if (computer.hp < 0) computer.hp = 0 ;
+				if (computer.hp < 0) computer.hp = 0;
 				turn = false;
 				updateGame();
 			});

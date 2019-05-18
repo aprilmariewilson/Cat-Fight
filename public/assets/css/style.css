@@ -28,7 +28,9 @@ background-color: #333333;
 margin: 0 auto;
 margin: 0;
 }
-
+.h3 {
+	margin-top: 0;
+}
 /* Modal layout css */
 
 .modal-element {
@@ -54,6 +56,74 @@ margin-top: 6%;
 	margin: auto;
 	padding-bottom: 35%;
 	
+}
+/*Winner Modal CSS*/
+
+.win-background{
+	background-image: url(/assets/img/background/winner_backdrop.jpg);
+	background-repeat: no-repeat;
+	border:solid 3px black;
+	background-position: center;
+	background-size: 90%;
+}
+.win-name{
+	margin-top: 2%;
+	padding-top: 2%;
+	width: 100%;
+	text-align: center;
+}
+#win-header {
+	margin-top: 5%;
+	padding: 0;
+	padding-top: 5%;
+}
+#winLabel {
+	text-align: center;
+	padding-top: 2%;
+	margin-top: 6%;
+	font-size: 40px;
+	text-shadow: 3px 3px 4px #333333;
+}
+#player-win {
+	height: 100%;
+	width: 100%;
+}
+#win-image {
+	height: 200px;
+	width: 200px;
+	margin: none;
+	margin-bottom: 15%;
+}
+#next-game {
+	color: #333;
+}
+.modal-name {
+	margin-top: 0;
+	width: 100%;
+	height: auto;
+	text-align: center;	
+}
+
+/*Loser Modal CSS*/
+
+#loseLabel {
+	text-align: center;
+}
+#start-again {
+	color: #333;
+}
+.loss {
+	padding-top: 0;
+}
+#loss-image {
+	height: 200px;
+	width: 200px;
+	margin: none;
+	margin-bottom: 15%;
+}
+#player-loss {
+	height: 100%;
+	width: 100%;
 }
 
 /* Navbar layout css */
