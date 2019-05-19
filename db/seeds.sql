@@ -1,22 +1,33 @@
 USE q2vthzrii2colmkc;
 
-INSERT INTO Cats (cat_name, hp, atk, def, model)
-VALUES
-	('Sprinkletons', 100, 20, 10, '/assets/spritesheets/cat-1.png'),
-    ('Sylvester', 150, 20, 10, '/assets/spritesheets/cat-2.png'),
-    ('Mr Bubbles', 88, 20, 10, '/assets/spritesheets/cat-3.png'),
-    ('Antonio', 125, 20, 10, '/assets/spritesheets/cat-4.png'),
-    ('Azure Cat', 101, 20, 10, '/assets/spritesheets/cat-0.png')
+INSERT INTO Cats VALUES ('Manny Quinn', 101, 20, 10, '/assets/spritesheets/cat-0.png');
+INSERT INTO Cats VALUES ( 'Karate Kat', 100, 20, 10, '/assets/spritesheets/cat-1.png');
+INSERT INTO Cats VALUES ( 'Ebenezer', 150, 20, 10, '/assets/spritesheets/cat-2.png');
+INSERT INTO Cats VALUES ( 'Ace', 88, 20, 10, '/assets/spritesheets/cat-3.png');
+INSERT INTO Cats VALUES ( 'Apache', 125, 20, 10, '/assets/spritesheets/cat-4.png');
+INSERT INTO Cats VALUES ('Sprinkletons', 100, 20, 10, '/assets/spritesheets/cat-5.png');    
+INSERT INTO Cats VALUES ('Sylvester', 150, 20, 10, '/assets/spritesheets/cat-2.png');
+INSERT INTO Cats VALUES ('Mr Bubbles', 88, 20, 10, '/assets/spritesheets/cat-3.png');
+INSERT INTO Cats VALUES ('Antonio', 125, 20, 10, '/assets/spritesheets/cat-4.png');
+INSERT INTO Cats VALUES ('Azure Cat', 101, 20, 10, '/assets/spritesheets/cat-5.png');
+INSERT INTO Cats VALUES ('Leonardo', 100, 20, 10, '/assets/spritesheets/cat-6.png');
+INSERT INTO Cats VALUES ('Michealangelo', 150, 20, 10, '/assets/spritesheets/cat-7.png');
+INSERT INTO Cats VALUES ('Donatello', 88, 20, 10, '/assets/spritesheets/cat-8.png');
+INSERT INTO Cats VALUES ('Crazy Marie', 125, 20, 10, '/assets/spritesheets/cat-9.png');
+INSERT INTO Cats VALUES ( 'Purr Jordan', 101, 20, 10, '/assets/spritesheets/cat-15.png');
+INSERT INTO Cats VALUES ( 'Wrigley', 100, 20, 10, '/assets/spritesheets/cat-16.png');
+INSERT INTO Cats VALUES ( 'Meoweyville Slugger', 150, 20, 10, '/assets/spritesheets/cat-17.png');
+INSERT INTO Cats VALUES ( 'Doc Mauliday', 88, 20, 10, '/assets/spritesheets/cat-18.png');
+INSERT INTO Cats VALUES ( 'Indiana Pounds', 125, 20, 10, '/assets/spritesheets/cat-19.png');
+INSERT INTO Cats VALUES ( 'Pow', 101, 20, 10, '/assets/spritesheets/cat-20.png');
+INSERT INTO Cats VALUES ( 'Ggrrrio', 100, 20, 10, '/assets/spritesheets/cat-21.png');
+INSERT INTO Cats VALUES ( 'meowrry', 150, 20, 10, '/assets/spritesheets/cat-22.png');
+INSERT INTO Cats VALUES ( 'Mr Meow', 88, 20, 10, '/assets/spritesheets/cat-23.png');
+INSERT INTO Cats VALUES ( 'Akira', 125, 20, 10, '/assets/spritesheets/cat-24.png');
+INSERT INTO Cats VALUES ( ' Clawzz', 101, 20, 10, '/assets/spritesheets/cat-25.png');
+INSERT INTO Cats VALUES ( 'Scaredy Cat', 100, 20, 10, '/assets/spritesheets/cat-26.png');
+INSERT INTO Cats VALUES ( 'Bill', 150, 20, 10, '/assets/spritesheets/cat-27.png');
+INSERT INTO Cats VALUES ( 'Ted', 88, 20, 10, '/assets/spritesheets/cat-28.png');
+INSERT INTO Cats VALUES ( 'Beuhler', 125, 20, 10, '/assets/spritesheets/cat-29.png');
+INSERT INTO Cats VALUES ('Mr Beat Down', 101, 20, 10, '/assets/spritesheets/cat-0.png');
 
-INSERT INTO Moves (move_name, atk, def)
-VALUES
-    ('kick', 30, 10),
-    ('punch', 5, 1),
-    ('powerShot', 17, 7),
-    ('flyingKick', 15, 7),
-    ('uppercut',10, 5),
-    ('superUppercut',20, 8),
-    ('combo', 7, 2),
-    ('doubleKick', 12, 6),
-    ('highKick', 15, 7),
-    ('doubleAttack', 25, 9)

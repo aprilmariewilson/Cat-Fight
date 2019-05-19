@@ -212,6 +212,7 @@ border-bottom: dotted 15px #ff00aa;
 /* moves buttons layout */
 ul {
 	list-style: none;
+	margin-left: 10%;
 	  }
 
   .move-btn {
@@ -220,8 +221,10 @@ ul {
 	background: #337ab7;
 	height: 48px;
 	width: 90%;
+	padding-right: 0;
 	
 	}
+
 a {
 color: whitesmoke;
 text-shadow: 1px 1px 2px #ccc;

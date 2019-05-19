@@ -3,7 +3,7 @@ var player = {
 	atk: 10,
 	maxhp: 150,
 	hp: 100,
-	// def: 5,
+	def: 5,
 	model: 1
 }
 
@@ -12,7 +12,7 @@ var computer = {
 	atk: 10,
 	maxhp: 150,
 	hp: 100,
-	// def: 4,
+	def: 4,
 	model: 1
 }
 
@@ -69,7 +69,7 @@ $(document).on("click", "#select-player", function () {
 	} else {
 		setPlayer($('#modal-name').val(), 1);
 		$('#exampleModal').modal("hide");
-		$('#status-text').text('fight!');
+
 	}
 });
 
@@ -82,14 +82,6 @@ $(document).on("click", ".move-btn", function (e) {
 		turn = false;
 	}
 });
-
-// "Item" dropdown menu list items
-// $(document).on("click", ".item-li", function () {
-// 	if (turn) {
-// 		useItem($(this).attr('value'));
-// 		turn = false;
-// 	}
-// });
 
 function updateGame() {
 	$('#player-left-health').html('<h3>' + player.name + ': ' + player.hp + ' / ' + player.maxhp + '</h3>');
@@ -118,14 +110,12 @@ function updateGame() {
 //close you lose game modal
 $(document).on("click", "#start-again", function () {
 	$('#loseModal').modal("hide");
-	$('#status-text').text('fight!');
 	playerLoses();
 });
 
 //close you won game modal
 $(document).on("click", "#next-game", function () {
 	$('#winModal').modal("hide");
-	$('#status-text').text('fight!');
 	playerWins();
 });
 
@@ -141,9 +131,9 @@ function playerWins() {
 
 function playerLoses() {
 	setTimeout(() => {
+		console.log('player loses function');
 		resetPlayer();
 		setEnemy();
-		// playerInterval = setInterval(draw, 100);
 		animateCat('idle');
 	}, 1500)
 }
@@ -219,9 +209,9 @@ function setPlayer(playerName) {
 
 function setEnemy() {
 	var random;
-
+console.log('set enemy function');
 	if (models.length === defeatedOpponents.length) {
-		$('#status-text').text('You won the game!');
+		console.log('You won the game!');
 	} else {
 
 		//loops through as long as length of models < length of defeatedOpponents (all models have been used)
@@ -245,7 +235,7 @@ function setEnemy() {
 			$('#player-right-health').html('<h3>' + computer.name + ':  ' + computer.hp + ' / ' + computer.hp + '</h3>');
 			compcharacter.src = computer.model;
 		});
-
+console,log('opponent:', data)
 	}
 
 
@@ -268,31 +258,11 @@ function selectPlayer() {
 
 //Set up the battle scene - most of this can go into style.css later on
 function createBattleField() {
-	$('#battle').empty();
-
-	var statusDiv = $('<div>');
-	var statusText = $('<h2>');
 	var health = $('<div>');
-
-
-	$(statusDiv).append(statusText);
-
-	$(statusDiv).css('background-color', 'yellow');
-	$(statusDiv).css('padding', '3%');
-	$(statusDiv).css('width', '95%');
-
-	$(statusText).attr('id', 'status-text');
-	$(statusText).css('color', '#337ab7');
-	$(statusText).css('text-shadow', '1px 1px 2px rgb(17, 10, 255,.75)');
 
 	$(background).append(player_left);
 	$(background).append(player_right);
-
-	$(statusDiv).append(statusText);
-
-	$(battleFrame).append(statusDiv);
-	$(battleFrame).append(background);
-}
+};
 
 //Selects a move and executes it perfectly
 function fightMove(amove) {
