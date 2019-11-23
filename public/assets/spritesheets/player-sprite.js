@@ -187,7 +187,7 @@ function animateCat(animation, endAnimation) {
             }, 900);
             break;
 
-            case 'uppercut':
+        case 'uppercut':
             curFrame = 0;
             srcY = 960
             frameCount = 6;
